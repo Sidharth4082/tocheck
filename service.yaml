@@ -2,8 +2,6 @@ kind: Service
 apiVersion: v1
 metadata:
   name: hello-world
-  namespace: example
-  
 spec:
   type: LoadBalancer
   selector:
