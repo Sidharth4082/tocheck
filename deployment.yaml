@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+  namespace: example
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      containers:
+        - name: app
+          image: in28min/hello-world-rest-api:0.0.4-SNAPSHOT
+          ports:
+            - name: web
+              containerPort: 3000
+              protocol: TCP
